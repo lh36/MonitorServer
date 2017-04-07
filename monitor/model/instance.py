@@ -73,7 +73,7 @@ class CInstance(object):
             return {}
 
         shipInfoDict = {}
-        for tItem in self.m_ShipDict:
+        for tItem in self.m_ShipDict.items():
             shipInfoDict[tItem[0]] = tItem[1].GetShape()
 
         return shipInfoDict

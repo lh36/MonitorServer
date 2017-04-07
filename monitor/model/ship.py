@@ -21,7 +21,7 @@ class CShip(object):
 
     def UpdateParam(self, dParam):
         self.m_ParamDict = dParam
-        CDatabase().UpdateShipParam(self.m_DBSet, dParam)
+        CDatabase().UpdateShipParam(self.m_DBSet, dParam.copy())
 
 
     ##---------------对外接口---------------##

@@ -46,15 +46,14 @@ class CGlobalManager(CSingleton):
             return {}
 
         dData = {}
-        for tItem in self.m_InstanceDict.items():
-            oInstance = tItem[1]
+        for iID, oInstance in self.m_InstanceDict.items():
             dInstanceInfo = {}
             dInstanceInfo[INSTANCE_DATA_NAME] = oInstance.GetInstanceName()
             dInstanceInfo[INSTANCE_DATA_DESP] = oInstance.GetInstanceDesp()
             dInstanceInfo[INSTANCE_DATA_AMOUNT] = oInstance.GetInstanceShipAmount()
             dInstanceInfo[INSTANCE_DATA_SHAPE] = oInstance.GetInstanceShipInfo()
             dInstanceInfo[INSTANCE_DATA_TIME] = oInstance.GetCreateTime()
-            dData[tItem[0]] = dInstanceInfo
+            dData[iID] = dInstanceInfo
 
         return dData
 
