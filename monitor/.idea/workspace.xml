@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fae5b8e-e37b-42e9-8533-65c6d66341bb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/instance.py" afterPath="$PROJECT_DIR$/model/instance.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/manager.py" afterPath="$PROJECT_DIR$/model/manager.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/ship.py" afterPath="$PROJECT_DIR$/model/ship.py" />
     </list>
     <ignored path="ship.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -518,6 +514,14 @@
       <option name="presentableId" value="Default" />
       <updated>1490885449378</updated>
     </task>
+    <task id="LOCAL-00001" summary="完成了API_01,02,03">
+      <created>1491582685186</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1491582685186</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
