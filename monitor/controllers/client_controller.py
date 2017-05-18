@@ -12,46 +12,39 @@ class ClientController(object):
     # 获取当前实例信息
     @staticmethod
     def GetInstanceInfo():
-        try:
-            result = CGlobalManager().GetInstanceInfo()
-            return {
-                "status": True,
-                "resp": result
-            }
-        except Exception as e:
-            return {
-                "status": False,
-                "error": str(e)
-            }
+        result = CGlobalManager().GetInstanceInfo()
+        return {
+            "status": True,
+            "resp": result
+        }
 
     # 连接当前实例,心跳包
     @staticmethod
     def ConnectInstance(sInstanceID):
-        try:
-            iInstanceID = int(sInstanceID)
-            result = CGlobalManager().ConnectInstance(iInstanceID)
-            return {
-                "status": True,
-                "resp": result
-            }
-        except Exception as e:
-            return {
-                "status": False,
-                "error": str(e)
-            }
+        iInstanceID = int(sInstanceID)
+        result = CGlobalManager().ConnectInstance(iInstanceID)
+        return {
+            "status": True,
+            "resp": result
+        }
 
     # 获取船只实验数据
     @staticmethod
     def GetShipParam(sInstanceID):
-        try:
-            iInstanceID = int(sInstanceID)
-            result = CGlobalManager().GetShipParam(iInstanceID)
-            return {
-                "status": True,
-                "resp": result
-            }
-        except Exception as e:
-            return {
-                "status": False,
-                "error": str(e)
-            }
+        iInstanceID = int(sInstanceID)
+        result = CGlobalManager().GetShipParam(iInstanceID)
+        return {
+            "status": True,
+            "resp": result
+        }
+
+    # 保存控制信息
+    @staticmethod
+    def SaveControlData(dData):
+        iInstanceID = int(dData[SHIP_DATA_INSTANCE_ID])
+        oInstance = CGlobalManager().GetInstanceByID(iInstanceID)
+        result = oInstance.SaveControlData(dData[SHIP_DATA_CONTROL])
+        return {
+            "status": result,
+            "resp": {}
+        }

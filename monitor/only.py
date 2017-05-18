@@ -22,17 +22,33 @@ SHIP_DATA_POSX = "posX"
 SHIP_DATA_POSY  = "posY"
 SHIP_DATA_RUD = "rud"
 SHIP_DATA_PHI = "phi"
+SHIP_DATA_GPS_PHI = "gps_phi"
 SHIP_DATA_SPEED = "speed"
 SHIP_DATA_GEAR = "gear"
 SHIP_DATA_TIME = "time"
+SHIP_DATA_KP = "kp"
+SHIP_DATA_KI = "ki"
+SHIP_DATA_KD = "kd"
+SHIP_DATA_K1 = "k1"
+SHIP_DATA_K2 = "k2"
+
 SHIP_DATA_INSTANCE_ID = "instanceid"
 SHIP_DATA_SHIP_ID = "shipid"
+
+#控制信息:w(s,a,d,p)-1或c[str];
+# w前,s后,d右,a左,p停止,可组合
+# -后面的数字为船舶id
+# 首字母为c则表示复杂命令,str的具体命令格式自行定义
+SHIP_DATA_CONTROL = "control"
+
 
 #船的型号
 SHIP_SHAPE_A = 1
 SHIP_SHAPE_B = 2
+SHIP_SHAPE_C = 3
 SHIP_SHAPE_DICT = {'A': SHIP_SHAPE_A,
                    'B': SHIP_SHAPE_B,
+                   'C': SHIP_SHAPE_C
                    }
 
 

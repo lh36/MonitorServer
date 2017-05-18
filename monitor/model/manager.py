@@ -36,8 +36,6 @@ class CGlobalManager(CSingleton):
 
     #根据ID获取实例
     def GetInstanceByID(self, iID):
-        print(self.m_InstanceDict)
-
         return self.m_InstanceDict.get(iID, None)
 
     #获取当前运行的实例信息

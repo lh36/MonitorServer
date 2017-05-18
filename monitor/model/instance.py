@@ -1,8 +1,8 @@
 # coding=utf-8
 
-from only import *
-from model.database import *
 from model.ship import *
+import threading
+import time
 
 
 #航行实例
@@ -15,6 +15,9 @@ class CInstance(object):
         self.m_iShipAmount = 0
         self.m_ShipDict = {}
         self.m_lCreateTime = 0
+        self.m_lLastTime = 0
+        self.m_sControlData = ""
+        self.m_Timer = None
 
     #初始化实例
     def Init(self, dData):
@@ -22,6 +25,7 @@ class CInstance(object):
         self.m_sDesp = dData[INSTANCE_DATA_DESP]
         self.m_iShipAmount = dData[INSTANCE_DATA_AMOUNT]
         self.m_lCreateTime = dData[INSTANCE_DATA_TIME]
+        self.m_lLastTime = time.time()
         self.m_iID = CDatabase().GetNewInstanceID()
         dNewData = {
             DATABASE_INSTANCE_INFO_ID: self.m_iID,
@@ -33,9 +37,9 @@ class CInstance(object):
 
         shapeDict = {}
         #生成船舶对象至船舶字典
-        for iID in range(self.m_iShipAmount):
+        for iID in range(1, self.m_iShipAmount + 1):
             oShip = CShip()
-            iShape = SHIP_SHAPE_DICT[dData[INSTANCE_DATA_SHAPE][iID]]
+            iShape = SHIP_SHAPE_DICT[dData[INSTANCE_DATA_SHAPE][iID - 1]]
             shapeDict[str(iID)] = iShape
             oShip.Init(iID, iShape)
             #绑定数据库数据集
@@ -47,6 +51,25 @@ class CInstance(object):
         dNewData[DATABASE_INSTANCE_INFO_SHIP_SHAPE] = shapeDict
         CDatabase().InsertInstanceInfo(dNewData)
 
+        #生成定时器
+        self.m_Timer = threading.Timer(10 * 60 + 10, self.TimerFinishInstance)
+        self.m_Timer.start()
+
+    #定时器调用，结束丢弃的实例
+    def TimerFinishInstance(self):
+        if time.time() - self.m_lLastTime > 10 * 60:
+            dData = {
+                INSTANCE_DATA_ID: self.m_iID,
+                INSTANCE_DATA_TIME: time.time()
+            }
+            self.m_Timer.cancel()
+            self.m_Timer = None
+            from model.manager import CGlobalManager
+            CGlobalManager().FinishInstance(dData)
+        else:
+            self.m_Timer.cancel()
+            self.m_Timer = threading.Timer(10 * 60 + 10, self.TimerFinishInstance)
+            self.m_Timer.start()
 
 
     ##---------------对外接口---------------##
@@ -57,6 +80,7 @@ class CInstance(object):
 
     #获取船
     def GetShipByID(self, iID):
+        self.m_lLastTime = time.time()
         return self.m_ShipDict.get(iID, None)
 
     def GetInstanceName(self):
@@ -90,3 +114,13 @@ class CInstance(object):
             dData[tItem[0]] = tItem[1].GetParam()
 
         return dData
+
+    # 保存控制信息
+    def SaveControlData(self, sData):
+        self.m_sControlData = sData
+
+    def GetControlData(self):
+        return self.m_sControlData
+
+    def ClearControlData(self):
+        self.m_sControlData = ""

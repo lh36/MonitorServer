@@ -11,36 +11,24 @@ class UpperController(CSingleton):
     # 开始新的航行实例
     @staticmethod
     def StartNewInstance(dData):
-        try:
-            iID = CGlobalManager().CreateNewInstance(dData)
-            return {
-                "status": True,
-                "resp": {"id": iID}
-            }
-        except Exception as e:
-            return {
-                "status": False,
-                "error": str(e)
-            }
+        iID = CGlobalManager().CreateNewInstance(dData)
+        return {
+            "status": True,
+            "resp": {"id": iID}
+        }
 
     # 结束航行实例
     @staticmethod
     def FinishInstance(dData):
-        try:
-            if CGlobalManager().FinishInstance(dData):
-                return {
-                    "status": True,
-                    "resp": {}
-                }
-            else:
-                return {
-                    "status": False,
-                    "error": "数据库未记录当前实例信息"
-                }
-        except Exception as e:
+        if CGlobalManager().FinishInstance(dData):
+            return {
+                "status": True,
+                "resp": {}
+            }
+        else:
             return {
                 "status": False,
-                "error": str(e)
+                "error": "数据库未记录当前实例信息"
             }
 
     # 更新船舶数据
@@ -60,20 +48,30 @@ class UpperController(CSingleton):
                 "error": "服务器当前未存在该实例下的船只，ID＝%d" % iShipID
             }
 
-        try:
-            oShip.UpdateParam(dParam)
-            return {
-                "status": True,
-                "resp": {}
-            }
-        except Exception as e:
-            return {
-                "status": False,
-                "error": str(e)
-            }
+        oShip.UpdateParam(dParam)
+        return {
+            "status": True,
+            "resp": {}
+        }
 
 
     # 获取控制信息，当存在信息时返回
     @staticmethod
-    def GetControlData():
-        pass
+    def GetControlData(iInstanceID):
+        iTime = 0
+        while 1:
+            oInstance = CGlobalManager().GetInstanceByID(iInstanceID)
+            if iTime > 50000000 or not oInstance:
+                return {
+                    "status": False,
+                    "resp": {}
+                }
+            sControlData = oInstance.GetControlData()
+            if sControlData:
+                oInstance.ClearControlData()
+                return {
+                    "status": True,
+                    "resp": sControlData
+                }
+
+            iTime += 1

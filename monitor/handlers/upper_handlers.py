@@ -44,10 +44,15 @@ class UpperUpdateParamHandler(tornado.web.RequestHandler):
             SHIP_DATA_POSY: float(self.get_argument(SHIP_DATA_POSY)),
             SHIP_DATA_RUD: float(self.get_argument(SHIP_DATA_RUD)),
             SHIP_DATA_PHI: float(self.get_argument(SHIP_DATA_PHI)),
+            SHIP_DATA_GPS_PHI: float(self.get_argument(SHIP_DATA_GPS_PHI)),
             SHIP_DATA_SPEED: float(self.get_argument(SHIP_DATA_SPEED)),
             SHIP_DATA_GEAR: int(self.get_argument(SHIP_DATA_GEAR)),
             SHIP_DATA_TIME: int(self.get_argument(SHIP_DATA_TIME)),
-
+            SHIP_DATA_KP: float(self.get_argument(SHIP_DATA_KP)),
+            SHIP_DATA_KI: float(self.get_argument(SHIP_DATA_KI)),
+            SHIP_DATA_KD: float(self.get_argument(SHIP_DATA_KD)),
+            SHIP_DATA_K1: float(self.get_argument(SHIP_DATA_K1)),
+            SHIP_DATA_K2: float(self.get_argument(SHIP_DATA_K2)),
         }
         iInstanceID = int(self.get_argument(SHIP_DATA_INSTANCE_ID))
         iShipID = int(self.get_argument(SHIP_DATA_SHIP_ID))
@@ -57,18 +62,20 @@ class UpperUpdateParamHandler(tornado.web.RequestHandler):
 
 # 返回上位机请求的控制信息
 class UpperGetControlDataHandler(tornado.web.RequestHandler):
-    executor = ThreadPoolExecutor(2)
+    executor = ThreadPoolExecutor()
 
     @tornado.web.asynchronous
     @tornado.gen.coroutine
-    def get(self):
-        result = yield self.waitForControlData()
-        self.write(json.dumps(result))
-        self.finish()
+    def get(self, sInstanceID):
+        try:
+            result = yield self.waitForControlData(int(sInstanceID))
+            self.write(json.dumps(result))
+        finally:
+            self.finish()
 
     @run_on_executor
-    def waitForControlData(self):
-        return UpperController.GetControlData()
+    def waitForControlData(self, iInstanceID):
+        return UpperController.GetControlData(iInstanceID)
 
 
 class SleepHandler(tornado.web.RequestHandler):

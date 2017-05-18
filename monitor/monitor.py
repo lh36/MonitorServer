@@ -14,11 +14,12 @@ class Application(tornado.web.Application):
         handlers = [(r"/monitor/upper/start_instance", upper_handlers.UpperStartInstanceHandler),
                     (r"/monitor/upper/finish_instance", upper_handlers.UpperFinishInstanceHandler),
                     (r"/monitor/upper/update_param", upper_handlers.UpperUpdateParamHandler),
-
+                    (r"/monitor/upper/get_control/(\w+)", upper_handlers.UpperGetControlDataHandler),
 
                     (r"/monitor/client/get_instance", client_handlers.ClientGetInstanceHandler),
                     (r"/monitor/client/connect_instance/(\w+)", client_handlers.ClientConnectInstanceHandler),
                     (r"/monitor/client/get_param/(\w+)", client_handlers.ClientGetParamHandler),
+                    (r"/monitor/client/control", client_handlers.ClientControlHandler),
                     ]
 
         tornado.web.Application.__init__(self, handlers, debug=True)

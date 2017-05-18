@@ -16,7 +16,7 @@ class ClientGetInstanceHandler(tornado.web.RequestHandler):
         self.write(json.dumps(result))
 
 
-# 保存上传的控制信息
+# 实例心跳包
 class ClientConnectInstanceHandler(tornado.web.RequestHandler):
     def get(self, sInstanceID):
         result = ClientController.ConnectInstance(sInstanceID)
@@ -27,5 +27,16 @@ class ClientConnectInstanceHandler(tornado.web.RequestHandler):
 class ClientGetParamHandler(tornado.web.RequestHandler):
     def get(self, sInstanceID):
         result = ClientController.GetShipParam(sInstanceID)
+        self.write(json.dumps(result))
+
+
+# 获取控制信息
+class ClientControlHandler(tornado.web.RequestHandler):
+    def post(self):
+        dData = {
+            SHIP_DATA_INSTANCE_ID: self.get_argument(SHIP_DATA_INSTANCE_ID),
+            SHIP_DATA_CONTROL: self.get_argument(SHIP_DATA_CONTROL),
+        }
+        result = ClientController.SaveControlData(dData)
         self.write(json.dumps(result))
 
