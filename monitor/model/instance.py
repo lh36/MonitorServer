@@ -43,8 +43,8 @@ class CInstance(object):
             shapeDict[str(iID)] = iShape
             oShip.Init(iID, iShape)
             #绑定数据库数据集
-            oDBSet = CDatabase().CreateNewShipSet(dData[INSTANCE_DATA_TIME], self.m_iID, iID)
-            oShip.BindDBSet(oDBSet)
+            oDataDBSet, oRefLineDBSet = CDatabase().CreateNewShipSet(dData[INSTANCE_DATA_TIME], self.m_iID, iID)
+            oShip.BindDBSet(oDataDBSet, oRefLineDBSet)
 
             self.m_ShipDict[iID] = oShip
 
@@ -105,6 +105,7 @@ class CInstance(object):
     def GetCreateTime(self):
         return self.m_lCreateTime
 
+    # 获取实验数据
     def GetShipParam(self):
         dData = {}
         if not self.m_ShipDict:
@@ -112,6 +113,17 @@ class CInstance(object):
 
         for tItem in self.m_ShipDict.items():
             dData[tItem[0]] = tItem[1].GetParam()
+
+        return dData
+
+    # 获取参考线信息
+    def GetRefLineData(self):
+        dData = {}
+        if not self.m_ShipDict:
+            return dData
+
+        for tItem in self.m_ShipDict.items():
+            dData[tItem[0]] = tItem[1].GetRefLine()
 
         return dData
 

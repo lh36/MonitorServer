@@ -78,23 +78,17 @@ class UpperGetControlDataHandler(tornado.web.RequestHandler):
         return UpperController.GetControlData(iInstanceID)
 
 
-class SleepHandler(tornado.web.RequestHandler):
-    executor = ThreadPoolExecutor(2)
-
-    @tornado.web.asynchronous
-    @tornado.gen.coroutine
-    def get(self):
-        res = yield self.sleep()
-        self.write("when i sleep 6 s")
-        self.finish()
-
-    @run_on_executor
-    def sleep(self):
-        i = 1
-        while (True):
-            i = i + 1
-            if i > 100000000:
-                break
-        return 5
-
+# 获取上位机发送的参考线
+class UpperUpdateRefLineHandler(tornado.web.RequestHandler):
+    def post(self):
+        dData = {
+            REFLINE_FLAG: int(self.get_argument(REFLINE_FLAG)),
+            REFLINE_POSX: float(self.get_argument(REFLINE_POSX)),
+            REFLINE_POSY: float(self.get_argument(REFLINE_POSY)),
+            REFLINE_RADIUS: float(self.get_argument(REFLINE_RADIUS)),
+        }
+        iInstanceID = int(self.get_argument(SHIP_DATA_INSTANCE_ID))
+        iShipID = int(self.get_argument(SHIP_DATA_SHIP_ID))
+        result = UpperController.UpdateRefLine(iInstanceID, iShipID, dData)
+        self.write(json.dumps(result))
 

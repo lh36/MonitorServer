@@ -16,9 +16,10 @@ class CDatabase(CSingleton):
     # 新建船舶数据表,以时间加序号命名
     def CreateNewShipSet(self, lTime, iInstanceID, iShipID):
         sTime = time.strftime("%Y%m%d_%H%M_", time.localtime(lTime))
-        sSetName = sTime + str(iInstanceID) + '_' + str(iShipID)
+        sDataSetName = sTime + str(iInstanceID) + '_' + str(iShipID)
+        sRefLineSetName = sTime + str(iInstanceID) + '_' + str(iShipID) + "_ref"
 
-        return self.db[sSetName]
+        return self.db[sDataSetName], self.db[sRefLineSetName]
 
     #生成一个实例存储ID
     def GetNewInstanceID(self):
@@ -53,5 +54,5 @@ class CDatabase(CSingleton):
         self.instance_info_db.save(dData)
 
     #更新船舶实验数据
-    def UpdateShipParam(self, oDBSet, dData):
+    def InsertShipData(self, oDBSet, dData):
         oDBSet.insert_one(dData)

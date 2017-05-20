@@ -16,7 +16,6 @@ class CGlobalManager(CSingleton):
         oInstance.Init(dData)
         iID = oInstance.GetInstanceID()
         self.m_InstanceDict[iID] = oInstance
-        print("bbbbb")
         print(self.m_InstanceDict)
         return iID
 
@@ -69,4 +68,13 @@ class CGlobalManager(CSingleton):
               return {}
 
         dData = oInstance.GetShipParam()
+        return dData
+
+    # 获取参考线信息
+    def GetRefLineData(self, iInstanceID):
+        oInstance = self.m_InstanceDict[iInstanceID]
+        if not oInstance:
+              return {}
+
+        dData = oInstance.GetRefLineData()
         return dData

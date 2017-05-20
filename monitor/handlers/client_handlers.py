@@ -30,6 +30,12 @@ class ClientGetParamHandler(tornado.web.RequestHandler):
         self.write(json.dumps(result))
 
 
+# 读取当前参考线信息
+class ClientGetRefLineHandler(tornado.web.RequestHandler):
+    def get(self, sInstanceID):
+        result = ClientController.GetRefLineData(sInstanceID)
+        self.write(json.dumps(result))
+
 # 获取控制信息
 class ClientControlHandler(tornado.web.RequestHandler):
     def post(self):

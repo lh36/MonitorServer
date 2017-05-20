@@ -38,11 +38,26 @@ class ClientController(object):
             "resp": result
         }
 
+    # 获取运动参考线信息
+    @staticmethod
+    def GetRefLineData(sInstanceID):
+        iInstanceID = int(sInstanceID)
+        result = CGlobalManager().GetRefLineData(iInstanceID)
+        return {
+            "status": True,
+            "resp": result
+        }
+
     # 保存控制信息
     @staticmethod
     def SaveControlData(dData):
         iInstanceID = int(dData[SHIP_DATA_INSTANCE_ID])
         oInstance = CGlobalManager().GetInstanceByID(iInstanceID)
+        if not oInstance:
+            return {
+                "status": False,
+                "resp": {}
+            }
         result = oInstance.SaveControlData(dData[SHIP_DATA_CONTROL])
         return {
             "status": result,

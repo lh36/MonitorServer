@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fae5b8e-e37b-42e9-8533-65c6d66341bb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/client_controller.py" afterPath="$PROJECT_DIR$/controllers/client_controller.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/upper_controller.py" afterPath="$PROJECT_DIR$/controllers/upper_controller.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/client_handlers.py" afterPath="$PROJECT_DIR$/handlers/client_handlers.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/handlers/upper_handlers.py" afterPath="$PROJECT_DIR$/handlers/upper_handlers.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/database.py" afterPath="$PROJECT_DIR$/model/database.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/instance.py" afterPath="$PROJECT_DIR$/model/instance.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/manager.py" afterPath="$PROJECT_DIR$/model/manager.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/ship.py" afterPath="$PROJECT_DIR$/model/ship.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monitor.py" afterPath="$PROJECT_DIR$/monitor.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/only.py" afterPath="$PROJECT_DIR$/only.py" />
     </list>
@@ -34,8 +37,18 @@
       <file leaf-file-name="client_handlers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handlers/client_handlers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="23" column="0" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="30" />
+            <state relative-caret-position="454">
+              <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monitor.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/monitor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="17" column="52" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -44,8 +57,8 @@
       <file leaf-file-name="client_controller.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/client_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="34" column="31" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="31" />
+            <state relative-caret-position="542">
+              <caret line="44" column="48" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -54,9 +67,11 @@
       <file leaf-file-name="manager.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-              <folding />
+            <state relative-caret-position="762">
+              <caret line="78" column="40" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="40" />
+              <folding>
+                <element signature="e#16#34#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,8 +79,8 @@
       <file leaf-file-name="instance.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/instance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
+            <state relative-caret-position="718">
+              <caret line="125" column="49" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="49" />
               <folding>
                 <element signature="e#16#40#0" expanded="true" />
               </folding>
@@ -73,23 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding>
-                <element signature="e#16#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="upper_controller.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="upper_controller.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/upper_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
+            <state relative-caret-position="550">
+              <caret line="89" column="5" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -98,10 +101,15 @@
       <file leaf-file-name="ship.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/ship.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="22" />
+            <state relative-caret-position="784">
+              <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
               <folding>
                 <element signature="e#16#34#0" expanded="true" />
+                <marker date="1495177486105" expanded="true" signature="94:1063" ph="..." />
+                <marker date="1495177486105" expanded="true" signature="118:309" ph="..." />
+                <marker date="1495177486105" expanded="true" signature="450:532" ph="..." />
+                <marker date="1495177486105" expanded="true" signature="957:989" ph="..." />
+                <marker date="1495177486105" expanded="true" signature="1029:1063" ph="..." />
               </folding>
             </state>
           </provider>
@@ -110,18 +118,8 @@
       <file leaf-file-name="upper_handlers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handlers/upper_handlers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="95" column="28" selection-start-line="95" selection-start-column="19" selection-end-line="95" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="only.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/only.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="28" column="18" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="18" />
+            <state relative-caret-position="880">
+              <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -130,11 +128,19 @@
       <file leaf-file-name="database.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="56" column="31" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="31" />
-              <folding>
-                <element signature="e#9#20#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="308">
+              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="only.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/only.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="305">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -166,25 +172,25 @@
         <option value="$PROJECT_DIR$/controllers/__init__.py" />
         <option value="$PROJECT_DIR$/model/__init__.py" />
         <option value="$PROJECT_DIR$/handlers/UpperHandlers.py" />
-        <option value="$PROJECT_DIR$/model/database.py" />
         <option value="$PROJECT_DIR$/controllers/UpperController.py" />
         <option value="$PROJECT_DIR$/handlers/ClientHandlers.py" />
         <option value="$PROJECT_DIR$/Main.py" />
-        <option value="$PROJECT_DIR$/handlers/client_handlers.py" />
         <option value="$PROJECT_DIR$/Main.py" />
+        <option value="$PROJECT_DIR$/only.py" />
         <option value="$PROJECT_DIR$/model/database.py" />
-        <option value="$PROJECT_DIR$/monitor.py" />
+        <option value="$PROJECT_DIR$/model/database.py" />
+        <option value="$PROJECT_DIR$/controllers/upper_controller.py" />
+        <option value="$PROJECT_DIR$/handlers/client_handlers.py" />
+        <option value="$PROJECT_DIR$/controllers/client_controller.py" />
+        <option value="$PROJECT_DIR$/controllers/client_controller.py" />
+        <option value="$PROJECT_DIR$/model/manager.py" />
+        <option value="$PROJECT_DIR$/model/manager.py" />
+        <option value="$PROJECT_DIR$/model/instance.py" />
+        <option value="$PROJECT_DIR$/model/instance.py" />
         <option value="$PROJECT_DIR$/model/ship.py" />
         <option value="$PROJECT_DIR$/model/ship.py" />
         <option value="$PROJECT_DIR$/handlers/upper_handlers.py" />
-        <option value="$PROJECT_DIR$/only.py" />
-        <option value="$PROJECT_DIR$/controllers/client_controller.py" />
-        <option value="$PROJECT_DIR$/controllers/client_controller.py" />
-        <option value="$PROJECT_DIR$/controllers/upper_controller.py" />
-        <option value="$PROJECT_DIR$/model/manager.py" />
-        <option value="$PROJECT_DIR$/model/manager.py" />
-        <option value="$PROJECT_DIR$/model/instance.py" />
-        <option value="$PROJECT_DIR$/model/instance.py" />
+        <option value="$PROJECT_DIR$/monitor.py" />
       </list>
     </option>
   </component>
@@ -195,10 +201,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="232" />
-    <option name="y" value="23" />
-    <option name="width" value="1214" />
-    <option name="height" value="967" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -247,6 +253,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -309,14 +317,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager">
@@ -558,15 +564,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="232" y="23" width="1214" height="967" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20098847" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20052083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910052" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910052" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -627,6 +633,11 @@
           <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
           <folding>
             <element signature="e#16#34#0" expanded="true" />
+            <marker date="1495177486105" expanded="true" signature="94:1063" ph="..." />
+            <marker date="1495177486105" expanded="true" signature="118:309" ph="..." />
+            <marker date="1495177486105" expanded="true" signature="450:532" ph="..." />
+            <marker date="1495177486105" expanded="true" signature="957:989" ph="..." />
+            <marker date="1495177486105" expanded="true" signature="1029:1063" ph="..." />
           </folding>
         </state>
       </provider>
@@ -636,7 +647,7 @@
         <state relative-caret-position="420">
           <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
           <folding>
-            <element signature="e#9#20#0" expanded="true" />
+            <element signature="e#9#20#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -645,7 +656,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="e#16#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -713,7 +726,7 @@
         <state relative-caret-position="750">
           <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
           <folding>
-            <element signature="e#9#20#0" expanded="true" />
+            <element signature="e#9#20#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -722,7 +735,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding />
+          <folding>
+            <element signature="e#16#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -790,7 +805,7 @@
         <state relative-caret-position="750">
           <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
           <folding>
-            <element signature="e#9#20#0" expanded="true" />
+            <element signature="e#9#20#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -799,7 +814,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding />
+          <folding>
+            <element signature="e#16#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -851,27 +868,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/Memory.py" />
-    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-780">
-          <caret line="1574" column="4" selection-start-line="1574" selection-start-column="4" selection-end-line="1574" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/gen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="209" column="4" selection-start-line="209" selection-start-column="4" selection-end-line="209" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/concurrent/futures/thread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/web.py" />
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/tornado/gen.py" />
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/concurrent/futures/thread.py" />
     <entry file="file://$PROJECT_DIR$/beans/Output.py" />
     <entry file="file://$PROJECT_DIR$/Algorithm.py" />
     <entry file="file://$PROJECT_DIR$/tools.py">
@@ -881,66 +880,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/monitor.py">
+    <entry file="file://$PROJECT_DIR$/model/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+        <state relative-caret-position="44">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#6#31#0" expanded="false" />
+            <element signature="e#16#44#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="56" column="31" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="31" />
-          <folding>
-            <element signature="e#9#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/client_handlers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="23" column="0" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="30" />
+        <state relative-caret-position="308">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/ship.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="22" />
-          <folding>
-            <element signature="e#16#34#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/client_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="34" column="31" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="31" />
+        <state relative-caret-position="542">
+          <caret line="44" column="48" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="48" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#16#44#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/instance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
+        <state relative-caret-position="718">
+          <caret line="125" column="49" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="49" />
           <folding>
             <element signature="e#16#40#0" expanded="true" />
           </folding>
@@ -949,38 +918,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-          <folding />
+        <state relative-caret-position="762">
+          <caret line="78" column="40" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="40" />
+          <folding>
+            <element signature="e#16#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/ship.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="784">
+          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+          <folding>
+            <element signature="e#16#34#0" expanded="true" />
+            <marker date="1495177486105" expanded="true" signature="94:1063" ph="..." />
+            <marker date="1495177486105" expanded="true" signature="118:309" ph="..." />
+            <marker date="1495177486105" expanded="true" signature="450:532" ph="..." />
+            <marker date="1495177486105" expanded="true" signature="957:989" ph="..." />
+            <marker date="1495177486105" expanded="true" signature="1029:1063" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/only.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="28" column="18" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handlers/upper_handlers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="95" column="28" selection-start-line="95" selection-start-column="19" selection-end-line="95" selection-end-column="28" />
+        <state relative-caret-position="305">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/upper_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
+        <state relative-caret-position="550">
+          <caret line="89" column="5" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/upper_handlers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handlers/client_handlers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monitor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="17" column="52" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
   </component>
   <component name="webServersAuthStorage">
-    <data>AAAAsPYYoQd5qeC2HKRIyt/cmqTsjsNoyQ4yygEkGazLgkTsaiqmZ2vT1ZX0H/g4PLWiOdyThvlDnEjlW1WNtupwSXEI1M0dKy/HR0G3Dh9baZgMuakXI8Xao8zGo8Lq5Ppcr/1BeXcEvAsLSTnKIa+RGz2jCNQe7HKAOmwLcbG8Avva+zXKsOx+8Z51ZxdwkmgUCtSvEQQSZplV0qE7ZLa/wfryEuHvSBThUjO7derHvO/woN9sA3j9MFMV95bytBy4Rg==</data>
+    <data>AAAAsC711EnNCzamOuir0bH/T7GKSeDmEz8ZpXLfML0HRwhfh3SwaHsefyKNTUfIefb1+l/rzkeF6fqOlT36NafguoDtpiBBwSHbxTTprAmRFUZRjaogWwf4e++QtE1GEbXYuAoPpycLWm1uhX8LvXjeznVntSqpZn6bQaj5NNzKRVmLkjc8dq6/6FxUZjs9XxcXx317ORqb8KMicSbJRlFuebf3KUOUmSmDXk4D6q6jrhVEDliBhB5kDj4O4QEHcnDLAQ==</data>
   </component>
 </project>

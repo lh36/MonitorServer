@@ -51,6 +51,12 @@ SHIP_SHAPE_DICT = {'A': SHIP_SHAPE_A,
                    'C': SHIP_SHAPE_C
                    }
 
+#参考线数据
+REFLINE_FLAG = "flag"
+REFLINE_POSX = "posX"
+REFLINE_POSY = "posY"
+REFLINE_RADIUS = "radius"
+
 
 #数据库存储实例信息key
 DATABASE_INSTANCE_INFO_SEARCH = {"flag": "InstanceInfo"}

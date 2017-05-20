@@ -75,3 +75,27 @@ class UpperController(CSingleton):
                 }
 
             iTime += 1
+
+
+    # 更新参考线信息
+    @staticmethod
+    def UpdateRefLine(iInstanceID, iShipID, dData):
+        oInstance = CGlobalManager().GetInstanceByID(iInstanceID)
+        if not oInstance:
+            return {
+                "status": False,
+                "error": "服务器当前未存在该实例，ID＝%d" % iInstanceID
+            }
+
+        oShip = oInstance.GetShipByID(iShipID)
+        if not oShip:
+            return {
+                "status": False,
+                "error": "服务器当前未存在该实例下的船只，ID＝%d" % iShipID
+            }
+
+        oShip.UpdateRefLine(dData)
+        return {
+            "status": True,
+            "resp": {}
+        }
