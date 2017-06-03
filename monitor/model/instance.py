@@ -18,6 +18,7 @@ class CInstance(object):
         self.m_lLastTime = 0
         self.m_sControlData = ""
         self.m_Timer = None
+        self.m_Data = None
 
     #初始化实例
     def Init(self, dData):
@@ -136,3 +137,11 @@ class CInstance(object):
 
     def ClearControlData(self):
         self.m_sControlData = ""
+
+    # 保存视频数据
+    def UpdateVideo(self, data):
+        self.m_Data = data
+        print(data)
+
+    def GetVideoData(self):
+        return  self.m_Data

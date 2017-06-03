@@ -99,3 +99,12 @@ class UpperController(CSingleton):
             "status": True,
             "resp": {}
         }
+
+    # 更新视频信息
+    @staticmethod
+    def UpdateVideo(data):
+        CGlobalManager().SaveVideoData(data)
+        return {
+            "status": True,
+            "resp": {}
+        }

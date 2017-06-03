@@ -16,12 +16,14 @@ class Application(tornado.web.Application):
                     (r"/monitor/upper/update_param", upper_handlers.UpperUpdateParamHandler),
                     (r"/monitor/upper/get_control/(\w+)", upper_handlers.UpperGetControlDataHandler),
                     (r"/monitor/upper/update_refline", upper_handlers.UpperUpdateRefLineHandler),
+                    (r"/monitor/upper/update_video", upper_handlers.UpperUpdateVideoHandler),
 
                     (r"/monitor/client/get_instance", client_handlers.ClientGetInstanceHandler),
                     (r"/monitor/client/connect_instance/(\w+)", client_handlers.ClientConnectInstanceHandler),
                     (r"/monitor/client/get_param/(\w+)", client_handlers.ClientGetParamHandler),
                     (r"/monitor/client/control", client_handlers.ClientControlHandler),
                     (r"/monitor/client/get_refline/(\w+)", client_handlers.ClientGetRefLineHandler),
+                    (r"/monitor/client/get_video", client_handlers.ClientGetVideoHandler),
                     ]
 
         tornado.web.Application.__init__(self, handlers, debug=True)

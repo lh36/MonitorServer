@@ -63,3 +63,13 @@ class ClientController(object):
             "status": result,
             "resp": {}
         }
+
+    # # 获取视频数据
+    # @staticmethod
+    # def GetVideoData(sInstanceID):
+    #     iInstanceID = int(sInstanceID)
+    #     result = CGlobalManager().GetVideoData(iInstanceID)
+    #     return {
+    #         "status": True,
+    #         "resp": result
+    #     }

@@ -46,3 +46,8 @@ class ClientControlHandler(tornado.web.RequestHandler):
         result = ClientController.SaveControlData(dData)
         self.write(json.dumps(result))
 
+# 获取视频数据
+class ClientGetVideoHandler(tornado.web.RequestHandler):
+    def get(self):
+        result = CGlobalManager().GetVideoData()
+        self.write(result)

@@ -6,6 +6,7 @@ from model import *
 
 class CGlobalManager(CSingleton):
     m_InstanceDict = {}
+    m_btVideoData = None
 
     def __init__(self):
         pass
@@ -78,3 +79,17 @@ class CGlobalManager(CSingleton):
 
         dData = oInstance.GetRefLineData()
         return dData
+
+    def SaveVideoData(self, btData):
+        self.m_btVideoData = btData
+
+    # 获取视频数据
+    def GetVideoData(self):
+        print(type(self.m_btVideoData))
+        return self.m_btVideoData
+        # oInstance = self.m_InstanceDict[iInstanceID]
+        # if not oInstance:
+        #       return {}
+        #
+        # data = oInstance.GetVideoData()
+        # return data
