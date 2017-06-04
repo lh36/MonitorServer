@@ -64,7 +64,7 @@ class CGlobalManager(CSingleton):
 
     #获取船舶实验数据
     def GetShipParam(self, iInstanceID):
-        oInstance = self.m_InstanceDict[iInstanceID]
+        oInstance = self.m_InstanceDict.get(iInstanceID, None)
         if not oInstance:
               return {}
 
@@ -73,7 +73,7 @@ class CGlobalManager(CSingleton):
 
     # 获取参考线信息
     def GetRefLineData(self, iInstanceID):
-        oInstance = self.m_InstanceDict[iInstanceID]
+        oInstance = self.m_InstanceDict.get(iInstanceID, None)
         if not oInstance:
               return {}
 

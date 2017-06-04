@@ -56,6 +56,8 @@ REFLINE_FLAG = "flag"
 REFLINE_POSX = "posX"
 REFLINE_POSY = "posY"
 REFLINE_RADIUS = "radius"
+REFLINE_COUNT = "count"
+REFLINE_POINTS = "points"
 
 
 #数据库存储实例信息key

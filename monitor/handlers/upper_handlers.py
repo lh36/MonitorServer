@@ -86,9 +86,17 @@ class UpperUpdateRefLineHandler(tornado.web.RequestHandler):
             REFLINE_POSX: float(self.get_argument(REFLINE_POSX)),
             REFLINE_POSY: float(self.get_argument(REFLINE_POSY)),
             REFLINE_RADIUS: float(self.get_argument(REFLINE_RADIUS)),
+            REFLINE_POINTS: [],
         }
         iInstanceID = int(self.get_argument(SHIP_DATA_INSTANCE_ID))
         iShipID = int(self.get_argument(SHIP_DATA_SHIP_ID))
+
+        iCount = int(self.get_argument(REFLINE_COUNT))
+        if iCount > 0:
+            sPoints = self.get_argument(REFLINE_POINTS).split(',')
+            for sPoint in sPoints:
+                dData[REFLINE_POINTS].append(sPoint)
+
         result = UpperController.UpdateRefLine(iInstanceID, iShipID, dData)
         self.write(json.dumps(result))
 
