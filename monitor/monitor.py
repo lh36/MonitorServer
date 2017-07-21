@@ -24,6 +24,7 @@ class Application(tornado.web.Application):
                     (r"/monitor/client/control", client_handlers.ClientControlHandler),
                     (r"/monitor/client/get_refline/(\w+)", client_handlers.ClientGetRefLineHandler),
                     (r"/monitor/client/get_video", client_handlers.ClientGetVideoHandler),
+                    (r"/monitor/client/get_data/(\w+)", client_handlers.ClientGetDataHandler),
                     ]
 
         tornado.web.Application.__init__(self, handlers, debug=True)

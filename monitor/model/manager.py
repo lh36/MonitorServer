@@ -93,3 +93,5 @@ class CGlobalManager(CSingleton):
         #
         # data = oInstance.GetVideoData()
         # return data
+
+    # 获取实验存储在数据库的所有数据

@@ -1,6 +1,5 @@
 # 上位机控制器
 
-from only import *
 from model import *
 
 

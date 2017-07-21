@@ -64,6 +64,12 @@ class ClientController(object):
             "resp": {}
         }
 
+    # 获取实验完整数据
+    @staticmethod
+    def GetData(sInstanceID):
+        iInstanceID = int(sInstanceID)
+        return CDatabase().GetInstanceDataByID(iInstanceID)
+
     # # 获取视频数据
     # @staticmethod
     # def GetVideoData(sInstanceID):

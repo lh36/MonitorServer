@@ -56,3 +56,32 @@ class CDatabase(CSingleton):
     #更新船舶实验数据
     def InsertShipData(self, oDBSet, dData):
         oDBSet.insert_one(dData)
+
+    #获取船舶数据字典，按船号索引
+    def GetInstanceDataByID(self, iInstanceID):
+        nameList = []
+        for sName in self.db.collection_names():
+            strList = sName.split('_')
+            if len(strList) < 3:
+                continue
+            if strList[2] == str(iInstanceID):
+                nameList.append(sName)
+
+        if not nameList:
+            return
+
+        dAllData = {}
+        for sName in nameList:
+            dataList = []
+            for dData in self.db[sName].find():
+                del dData["_id"]
+                dataList.append(dData)
+            strList = sName.split('_')
+            if len(strList) == 4:
+                s = 'd' + strList[3]
+            elif len(strList) == 5:
+                s = 'd' + strList[3] + '_' + strList[4]
+
+            dAllData[s] = dataList
+
+        return dAllData
