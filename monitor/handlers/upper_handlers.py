@@ -53,6 +53,11 @@ class UpperUpdateParamHandler(tornado.web.RequestHandler):
             SHIP_DATA_KD: float(self.get_argument(SHIP_DATA_KD)),
             SHIP_DATA_K1: float(self.get_argument(SHIP_DATA_K1)),
             SHIP_DATA_K2: float(self.get_argument(SHIP_DATA_K2)),
+            SHIP_DATA_TEM: float(self.get_argument(SHIP_DATA_TEM)),
+            SHIP_DATA_PH: float(self.get_argument(SHIP_DATA_PH)),
+            SHIP_DATA_DISO: float(self.get_argument(SHIP_DATA_DISO)),
+            SHIP_DATA_TUR: float(self.get_argument(SHIP_DATA_TUR)),
+            SHIP_DATA_CON: float(self.get_argument(SHIP_DATA_CON)),
         }
         iInstanceID = int(self.get_argument(SHIP_DATA_INSTANCE_ID))
         iShipID = int(self.get_argument(SHIP_DATA_SHIP_ID))
@@ -62,7 +67,7 @@ class UpperUpdateParamHandler(tornado.web.RequestHandler):
 
 # 返回上位机请求的控制信息
 class UpperGetControlDataHandler(tornado.web.RequestHandler):
-    executor = ThreadPoolExecutor()
+    executor = ThreadPoolExecutor(5)
 
     @tornado.web.asynchronous
     @tornado.gen.coroutine
