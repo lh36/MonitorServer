@@ -32,10 +32,11 @@ SHIP_DATA_KD = "kd"
 SHIP_DATA_K1 = "k1"
 SHIP_DATA_K2 = "k2"
 SHIP_DATA_TEM = "tem"
-SHIP_DATA_PH = "ph"
+SHIP_DATA_PH = "pH"
 SHIP_DATA_DISO = "diso"
 SHIP_DATA_TUR = "tur"
 SHIP_DATA_CON = "con"
+
 
 SHIP_DATA_INSTANCE_ID = "instanceid"
 SHIP_DATA_SHIP_ID = "shipid"
