@@ -17,8 +17,10 @@ class CInstance(object):
         self.m_lCreateTime = 0
         self.m_lLastTime = 0
         self.m_sControlData = ""
+        self.m_btVideoData = None
         self.m_Timer = None
         self.m_Data = None
+        self.m_VideoDBSet = None
 
     #初始化实例
     def Init(self, dData):
@@ -39,15 +41,18 @@ class CInstance(object):
         shapeDict = {}
         #生成船舶对象至船舶字典
         for iID in range(1, self.m_iShipAmount + 1):
-            oShip = CShip()
-            iShape = SHIP_SHAPE_DICT[dData[INSTANCE_DATA_SHAPE][iID - 1]]
-            shapeDict[str(iID)] = iShape
-            oShip.Init(iID, iShape)
+            oShip = CShip() # 创建该船
+            iShape = SHIP_SHAPE_DICT[dData[INSTANCE_DATA_SHAPE][iID - 1]] # 设置船型
+            shapeDict[str(iID)] = iShape # 船型临时变量字典
+            oShip.Init(iID, iShape) # 根据船号船型初始化船
             #绑定数据库数据集
             oDataDBSet, oRefLineDBSet = CDatabase().CreateNewShipSet(dData[INSTANCE_DATA_TIME], self.m_iID, iID)
             oShip.BindDBSet(oDataDBSet, oRefLineDBSet)
 
             self.m_ShipDict[iID] = oShip
+
+        self.m_VideoDBSet = CDatabase().CreateNewVideoSet(dData[INSTANCE_DATA_TIME], self.m_iID)
+
 
         dNewData[DATABASE_INSTANCE_INFO_SHIP_SHAPE] = shapeDict
         CDatabase().InsertInstanceInfo(dNewData)
@@ -72,7 +77,13 @@ class CInstance(object):
             self.m_Timer = threading.Timer(10 * 60 + 10, self.TimerFinishInstance)
             self.m_Timer.start()
 
-
+    def UpdateVideoData(self, btData):
+        self.m_btVideoData = btData
+        data = {
+            "video": bytes(btData)
+        }
+        # self.m_VideoDBSet.insert(data)
+        CDatabase().InsertVideoData(self.m_VideoDBSet, data)  # 视频数据存入数据库
     ##---------------对外接口---------------##
 
     #获取实例ID

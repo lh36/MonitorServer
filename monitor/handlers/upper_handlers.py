@@ -109,6 +109,8 @@ class UpperUpdateRefLineHandler(tornado.web.RequestHandler):
 # 接收摄像头视频数据
 class UpperUpdateVideoHandler(tornado.web.RequestHandler):
     def post(self):
-        data = self.request.body
-        result = UpperController.UpdateVideo(data)
+        data =  self.request.body
+        iInstanceID = int(data[0])
+        btVideoData = data[1:]
+        result = UpperController.UpdateVideo(iInstanceID, btVideoData)
         self.write(json.dumps(result))

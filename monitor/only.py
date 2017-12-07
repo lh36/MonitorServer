@@ -40,6 +40,7 @@ SHIP_DATA_CON = "con"
 
 SHIP_DATA_INSTANCE_ID = "instanceid"
 SHIP_DATA_SHIP_ID = "shipid"
+SHIP_DATA_VIDEO = "video"
 
 #控制信息:w(s,a,d,p)-1或c[str];
 # w前,s后,d右,a左,p停止,可组合
