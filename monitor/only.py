@@ -36,6 +36,8 @@ SHIP_DATA_PH = "pH"
 SHIP_DATA_DISO = "diso"
 SHIP_DATA_TUR = "tur"
 SHIP_DATA_CON = "con"
+SHIP_DATA_CHECKVALUE = "check_value"
+SHIP_DATA_LOCAL_CHECKVALUE = "local_check_value"
 
 
 SHIP_DATA_INSTANCE_ID = "instanceid"
