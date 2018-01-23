@@ -37,32 +37,54 @@ class UpperFinishInstanceHandler(tornado.web.RequestHandler):
 # 更新上位机船舶参数
 class UpperUpdateParamHandler(tornado.web.RequestHandler):
     def post(self):
-        dParam = {
-            SHIP_DATA_LAT: float(self.get_argument(SHIP_DATA_LAT)),
-            SHIP_DATA_LON: float(self.get_argument(SHIP_DATA_LON)),
-            SHIP_DATA_POSX: float(self.get_argument(SHIP_DATA_POSX)),
-            SHIP_DATA_POSY: float(self.get_argument(SHIP_DATA_POSY)),
-            SHIP_DATA_RUD: float(self.get_argument(SHIP_DATA_RUD)),
-            SHIP_DATA_PHI: float(self.get_argument(SHIP_DATA_PHI)),
-            SHIP_DATA_GPS_PHI: float(self.get_argument(SHIP_DATA_GPS_PHI)),
-            SHIP_DATA_SPEED: float(self.get_argument(SHIP_DATA_SPEED)),
-            SHIP_DATA_GEAR: int(self.get_argument(SHIP_DATA_GEAR)),
-            SHIP_DATA_TIME: int(self.get_argument(SHIP_DATA_TIME)),
-            SHIP_DATA_KP: float(self.get_argument(SHIP_DATA_KP)),
-            SHIP_DATA_KI: float(self.get_argument(SHIP_DATA_KI)),
-            SHIP_DATA_KD: float(self.get_argument(SHIP_DATA_KD)),
-            SHIP_DATA_K1: float(self.get_argument(SHIP_DATA_K1)),
-            SHIP_DATA_K2: float(self.get_argument(SHIP_DATA_K2)),
-            SHIP_DATA_TEM: float(self.get_argument(SHIP_DATA_TEM)),
-            SHIP_DATA_PH: float(self.get_argument(SHIP_DATA_PH)),
-            SHIP_DATA_DISO: float(self.get_argument(SHIP_DATA_DISO)),
-            SHIP_DATA_TUR: float(self.get_argument(SHIP_DATA_TUR)),
-            SHIP_DATA_CON: float(self.get_argument(SHIP_DATA_CON)),
-        }
-        iInstanceID = int(self.get_argument(SHIP_DATA_INSTANCE_ID))
-        iShipID = int(self.get_argument(SHIP_DATA_SHIP_ID))
-        result = UpperController.UpdateParam(iInstanceID, iShipID, dParam)
-        self.write(json.dumps(result))
+        local_check_value = float(self.get_argument(SHIP_DATA_LAT))+\
+                            float(self.get_argument(SHIP_DATA_LON))+\
+                            float(self.get_argument(SHIP_DATA_POSX)) + \
+                            float(self.get_argument(SHIP_DATA_POSY))+ \
+                            float(self.get_argument(SHIP_DATA_RUD))+\
+                            float(self.get_argument(SHIP_DATA_PHI))+\
+                            float(self.get_argument(SHIP_DATA_GPS_PHI))+\
+                            float(self.get_argument(SHIP_DATA_SPEED))+ \
+                            float(self.get_argument(SHIP_DATA_KP))+\
+                            float(self.get_argument(SHIP_DATA_KI))+\
+                            float(self.get_argument(SHIP_DATA_KD))+\
+                            float(self.get_argument(SHIP_DATA_K1))+\
+                            float(self.get_argument(SHIP_DATA_K2))+\
+                            float(self.get_argument(SHIP_DATA_TEM))+\
+                            float(self.get_argument(SHIP_DATA_PH))+\
+                            float(self.get_argument(SHIP_DATA_DISO))+\
+                            float(self.get_argument(SHIP_DATA_TUR))+\
+                            float(self.get_argument(SHIP_DATA_CON))
+        rmt_check_value = float(self.get_argument(SHIP_DATA_CHECKVALUE))
+        if abs(local_check_value - rmt_check_value) <= 0.005:
+            dParam = {
+                SHIP_DATA_LAT: float(self.get_argument(SHIP_DATA_LAT)),
+                SHIP_DATA_LON: float(self.get_argument(SHIP_DATA_LON)),
+                SHIP_DATA_POSX: float(self.get_argument(SHIP_DATA_POSX)),
+                SHIP_DATA_POSY: float(self.get_argument(SHIP_DATA_POSY)),
+                SHIP_DATA_RUD: float(self.get_argument(SHIP_DATA_RUD)),
+                SHIP_DATA_PHI: float(self.get_argument(SHIP_DATA_PHI)),
+                SHIP_DATA_GPS_PHI: float(self.get_argument(SHIP_DATA_GPS_PHI)),
+                SHIP_DATA_SPEED: float(self.get_argument(SHIP_DATA_SPEED)),
+                SHIP_DATA_GEAR: int(self.get_argument(SHIP_DATA_GEAR)),
+                SHIP_DATA_TIME: int(self.get_argument(SHIP_DATA_TIME)),
+                SHIP_DATA_KP: float(self.get_argument(SHIP_DATA_KP)),
+                SHIP_DATA_KI: float(self.get_argument(SHIP_DATA_KI)),
+                SHIP_DATA_KD: float(self.get_argument(SHIP_DATA_KD)),
+                SHIP_DATA_K1: float(self.get_argument(SHIP_DATA_K1)),
+                SHIP_DATA_K2: float(self.get_argument(SHIP_DATA_K2)),
+                SHIP_DATA_TEM: float(self.get_argument(SHIP_DATA_TEM)),
+                SHIP_DATA_PH: float(self.get_argument(SHIP_DATA_PH)),
+                SHIP_DATA_DISO: float(self.get_argument(SHIP_DATA_DISO)),
+                SHIP_DATA_TUR: float(self.get_argument(SHIP_DATA_TUR)),
+                SHIP_DATA_CON: float(self.get_argument(SHIP_DATA_CON)),
+                SHIP_DATA_CHECKVALUE: float(self.get_argument(SHIP_DATA_CHECKVALUE)),
+                SHIP_DATA_LOCAL_CHECKVALUE: float(local_check_value)
+            }
+            iInstanceID = int(self.get_argument(SHIP_DATA_INSTANCE_ID))
+            iShipID = int(self.get_argument(SHIP_DATA_SHIP_ID))
+            result = UpperController.UpdateParam(iInstanceID, iShipID, dParam)
+            self.write(json.dumps(result))
 
 
 # 返回上位机请求的控制信息
