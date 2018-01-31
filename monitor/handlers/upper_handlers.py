@@ -77,9 +77,7 @@ class UpperUpdateParamHandler(tornado.web.RequestHandler):
                 SHIP_DATA_PH: float(self.get_argument(SHIP_DATA_PH)),
                 SHIP_DATA_DISO: float(self.get_argument(SHIP_DATA_DISO)),
                 SHIP_DATA_TUR: float(self.get_argument(SHIP_DATA_TUR)),
-                SHIP_DATA_CON: float(self.get_argument(SHIP_DATA_CON)),
-                SHIP_DATA_CHECKVALUE: float(self.get_argument(SHIP_DATA_CHECKVALUE)),
-                SHIP_DATA_LOCAL_CHECKVALUE: float(local_check_value)
+                SHIP_DATA_CON: float(self.get_argument(SHIP_DATA_CON))
             }
             iInstanceID = int(self.get_argument(SHIP_DATA_INSTANCE_ID))
             iShipID = int(self.get_argument(SHIP_DATA_SHIP_ID))
@@ -132,7 +130,11 @@ class UpperUpdateRefLineHandler(tornado.web.RequestHandler):
 class UpperUpdateVideoHandler(tornado.web.RequestHandler):
     def post(self):
         data =  self.request.body
-        iInstanceID = int(data[0])
-        btVideoData = data[1:]
-        result = UpperController.UpdateVideo(iInstanceID, btVideoData)
+        result = UpperController.UpdateVideo(data)
+        self.write(json.dumps(result))
+
+class UpperUpdateMessageHandler(tornado.web.RequestHandler):
+    def post(self):
+        message = self.request.body
+        result = UpperController.UpdateMessage(message)
         self.write(json.dumps(result))

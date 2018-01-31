@@ -17,10 +17,8 @@ class CInstance(object):
         self.m_lCreateTime = 0
         self.m_lLastTime = 0
         self.m_sControlData = ""
-        self.m_btVideoData = None
         self.m_Timer = None
         self.m_Data = None
-        self.m_VideoDBSet = None
 
     #初始化实例
     def Init(self, dData):
@@ -51,9 +49,6 @@ class CInstance(object):
 
             self.m_ShipDict[iID] = oShip
 
-        self.m_VideoDBSet = CDatabase().CreateNewVideoSet(dData[INSTANCE_DATA_TIME], self.m_iID)
-
-
         dNewData[DATABASE_INSTANCE_INFO_SHIP_SHAPE] = shapeDict
         CDatabase().InsertInstanceInfo(dNewData)
 
@@ -77,13 +72,6 @@ class CInstance(object):
             self.m_Timer = threading.Timer(10 * 60 + 10, self.TimerFinishInstance)
             self.m_Timer.start()
 
-    def UpdateVideoData(self, btData):
-        self.m_btVideoData = btData
-        data = {
-            "video": bytes(btData)
-        }
-        # self.m_VideoDBSet.insert(data)
-        CDatabase().InsertVideoData(self.m_VideoDBSet, data)  # 视频数据存入数据库
     ##---------------对外接口---------------##
 
     #获取实例ID

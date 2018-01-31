@@ -52,6 +52,13 @@ class ClientGetVideoHandler(tornado.web.RequestHandler):
         result = CGlobalManager().GetVideoData()
         self.write(result)
 
+
+# 获取状态数据
+class ClientGetMessageHandler(tornado.web.RequestHandler):
+    def get(self):
+        result = CGlobalManager().GetMessage()
+        self.write(result)
+
 # 获取实验数据
 class ClientGetDataHandler(tornado.web.RequestHandler):
     def get(self, sInstanceID):
