@@ -8,7 +8,7 @@ from only import *
 class CDatabase(CSingleton):
     def __init__(self):
         # 链接数据库
-        client = pymongo.MongoClient("localhost", 27017)
+        client = pymongo.MongoClient("localhost", 27123)
         db = client.monitor  # 数据库的名字
         self.db = db
         self.instance_info_db = self.db.instance_info
