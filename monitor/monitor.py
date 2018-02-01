@@ -17,6 +17,7 @@ class Application(tornado.web.Application):
                     (r"/monitor/upper/get_control/(\w+)", upper_handlers.UpperGetControlDataHandler),
                     (r"/monitor/upper/update_refline", upper_handlers.UpperUpdateRefLineHandler),
                     (r"/monitor/upper/update_video", upper_handlers.UpperUpdateVideoHandler),
+                    (r"/monitor/upper/update_fbmessage", upper_handlers.UpperUpdateMessageHandler),
 
                     (r"/monitor/client/get_instance", client_handlers.ClientGetInstanceHandler),
                     (r"/monitor/client/connect_instance/(\w+)", client_handlers.ClientConnectInstanceHandler),
@@ -25,6 +26,7 @@ class Application(tornado.web.Application):
                     (r"/monitor/client/get_refline/(\w+)", client_handlers.ClientGetRefLineHandler),
                     (r"/monitor/client/get_video", client_handlers.ClientGetVideoHandler),
                     (r"/monitor/client/get_data/(\w+)", client_handlers.ClientGetDataHandler),
+                    (r"/monitor/client/get_fbmessage", client_handlers.ClientGetMessageHandler),
                     ]
 
         tornado.web.Application.__init__(self, handlers, debug=True)

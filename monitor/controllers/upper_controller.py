@@ -101,15 +101,17 @@ class UpperController(CSingleton):
 
     # 更新视频信息
     @staticmethod
-    def UpdateVideo(iInstanceID, data):
-        oInstance = CGlobalManager().GetInstanceByID(iInstanceID)
-        if not oInstance:
-            return {
-                "status": False,
-                "error": "服务器当前未存在该实例，ID＝%d" % iInstanceID
-            }
+    def UpdateVideo(data):
+        CGlobalManager().SaveVideoData(data)
+        return {
+            "status": True,
+            "resp": {}
+        }
 
-        oInstance.UpdateVideoData(data)
+    # 更新状态反馈信息
+    @staticmethod
+    def UpdateMessage(message):
+        CGlobalManager().SaveMessage(message)
         return {
             "status": True,
             "resp": {}

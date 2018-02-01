@@ -7,6 +7,7 @@ from model import *
 class CGlobalManager(CSingleton):
     m_InstanceDict = {}
     m_btVideoData = None
+    m_sMessage = ""
 
     def __init__(self):
         pass
@@ -95,3 +96,9 @@ class CGlobalManager(CSingleton):
         # return data
 
     # 获取实验存储在数据库的所有数据
+
+    def SaveMessage(self, message):
+        self.m_sMessage = message
+
+    def GetMessage(self):
+        return self.m_sMessage

@@ -8,8 +8,7 @@ from only import *
 class CDatabase(CSingleton):
     def __init__(self):
         # 链接数据库
-        # client = pymongo.MongoClient("localhost", 27123)
-        client = pymongo.MongoClient("localhost", 27017)
+        client = pymongo.MongoClient("localhost", 27123)
         db = client.monitor  # 数据库的名字
         self.db = db
         self.instance_info_db = self.db.instance_info
@@ -22,12 +21,6 @@ class CDatabase(CSingleton):
 
         return self.db[sDataSetName], self.db[sRefLineSetName]
 
-    # 新建存储视频数据集，和存储船舶数据统一实例号
-    def CreateNewVideoSet(self, lTime, iInstanceID):
-        sTime = time.strftime("%Y%m%d_%H%M_", time.localtime(lTime))
-        sDataSetName = sTime + str(iInstanceID) + '_' + 'V'
-
-        return self.db[sDataSetName]
 
     #生成一个实例存储ID
     def GetNewInstanceID(self):
@@ -65,9 +58,6 @@ class CDatabase(CSingleton):
     def InsertShipData(self, oDBSet, dData):
         oDBSet.insert_one(dData)
 
-    # 更新视频数据
-    def InsertVideoData(self, oDBSet, dData):
-        oDBSet.insert(dData)
 
     #获取船舶数据字典，按船号索引
     def GetInstanceDataByID(self, iInstanceID):
